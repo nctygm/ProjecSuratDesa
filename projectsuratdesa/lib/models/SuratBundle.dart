@@ -1,0 +1,121 @@
+import 'package:flutter/material.dart';
+import 'package:projectsuratdesa/screens/home/home_screen.dart';
+import 'package:projectsuratdesa/screens/home/halamansurat/inputsuratkelahiran.dart';
+
+class SuratBundles {
+  final int id, recipes;
+  final String title,
+      description,
+      imageSrc,
+      syarat,
+      buktilahir,
+      uploadbuktilahir,
+      uploadktp,
+      uploadKK,
+      uploadbuktinikah;
+  final Color color;
+  final Widget destination;
+
+  SuratBundles(
+      {required this.id,
+      required this.buktilahir,
+      required this.recipes,
+      required this.title,
+      required this.description,
+      required this.imageSrc,
+      required this.syarat,
+      required this.uploadktp,
+      required this.uploadbuktilahir,
+      required this.uploadKK,
+      required this.uploadbuktinikah,
+      required this.color,
+      required this.destination});
+}
+
+// Demo list
+List<SuratBundles> suratBundles = [
+  SuratBundles(
+      id: 1,
+      buktilahir: "Surat Keterangan Lahir",
+      uploadktp: 'KTP Ibu',
+      uploadbuktilahir: 'Surat Ket Lahir RS',
+      uploadKK: "Upload Kartu Keluarga",
+      uploadbuktinikah: "Bukti Nikah",
+      recipes: 95,
+      title: "Surat Keterangan Kelahiran",
+      description: "Adalah surat pengantar untuk pembuatan akta lahir",
+      imageSrc: "assets/png/kelahiran.png",
+      syarat: "Syarat yang diperlukan :",
+      color: Color(0xFF2DBBD8),
+      destination: InputSuratKelahiran()),
+  SuratBundles(
+      id: 2,
+      buktilahir: "Surat Keterangan Kematian",
+      uploadbuktilahir: 'Surat Petugas/Dokter',
+      uploadKK: "KTP (Yang Meninggal)",
+      uploadbuktinikah: "KK (Yang Meninggal)",
+      recipes: 95,
+      title: "Surat Keterangan Kematian",
+      uploadktp: 'KTP dan KK Pemohon',
+      description: "Adalah surat pengantar untuk keterangan Kematian",
+      imageSrc: "assets/png/kematian.png",
+      syarat: "Syarat yang diperlukan :",
+      color: Colors.red,
+      destination: HomeScreen()),
+  SuratBundles(
+      id: 3,
+      buktilahir: "Surat Keterangan Lahir",
+      uploadbuktilahir: 'Surat Pengantar RT/RW',
+      uploadKK: "KTP",
+      uploadbuktinikah: "Kartu Keluarga",
+      recipes: 95,
+      title: "Surat Keterangan Tidak Mampu",
+      uploadktp: 'Ket. Tidak Mampu',
+      description: "Adalah surat Keterangan Tidak Mampu",
+      imageSrc: "assets/png/tidak_mampu.png",
+      syarat: "Syarat yang diperlukan :",
+      color: Colors.green,
+      destination: HomeScreen()),
+  SuratBundles(
+      id: 4,
+      buktilahir: "Surat Keterangan Lahir",
+      uploadktp: 'Ijazah',
+      uploadbuktilahir: 'Akta Kelahiran',
+      uploadKK: "Katu Keluarga & KTP",
+      uploadbuktinikah: "Akta Perkawinan",
+      recipes: 95,
+      title: "Surat Keterangan Biodata Penduduk",
+      description: "Adalah surat Keterangan Biodata Penduduk",
+      imageSrc: "assets/png/biodata_penduduk.png",
+      syarat: "Syarat yang diperlukan :",
+      color: Colors.orange,
+      destination: HomeScreen()),
+  SuratBundles(
+      id: 5,
+      buktilahir: "Surat Keterangan Lahir",
+      uploadktp: 'Kartu Keluarga',
+      uploadKK: " - ",
+      uploadbuktilahir: 'KTP',
+      uploadbuktinikah: " -",
+      recipes: 95,
+      title: "Surat Keterangan Umum Desa",
+      description: "Adalah surat umum untuk keperluan penduduk/pribadi",
+      imageSrc: "assets/png/umum.png",
+      syarat: "Syarat yang diperlukan :",
+      color: Colors.purple,
+      destination: HomeScreen()),
+  SuratBundles(
+      id: 6,
+      buktilahir: "Surat Keterangan Lahir",
+      uploadktp: 'Akta Pendirian UKM',
+      uploadKK: "Surat Perjanjian Sewa",
+      uploadbuktilahir: 'Kartu Keluarga & KTP',
+      uploadbuktinikah: "Bukti Tempat Usaha",
+      recipes: 95,
+      title: "Surat Keterangan Domisili Usaha",
+      description: "Adalah Surat untuk Pengurusan domisili Usaha",
+      imageSrc: "assets/png/usaha.png",
+      syarat: "Syarat yang diperlukan :",
+      color: Color(0xFF2D365C),
+      destination: HomeScreen()),
+];
