@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projectsuratdesa/models/NavItem.dart';
-import 'package:projectsuratdesa/screens/home/home_screen.dart';
+import 'package:projectsuratdesa/screens/home_screen.dart';
+import 'package:projectsuratdesa/screens/loginscreen.dart';
+import 'package:projectsuratdesa/screens/registerscreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(color: Colors.white, elevation: 0),
           //visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: const HomeScreen(),
+        home: LoginScreen(),
       ),
     );
   }

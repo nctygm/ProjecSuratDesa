@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectsuratdesa/screens/home/home_screen.dart';
+import 'package:projectsuratdesa/screens/home_screen.dart';
 
 class NavItem {
   final int id;
@@ -30,3 +30,4 @@ class NavItems extends ChangeNotifier {
         id: 4, icon: "assets/icons/personicon.png", destination: HomeScreen()),
   ];
 }
+//INI ADALAH CODINGAN UNTUK MENGATUR GAMBAR PADA NAVIGASI DI BAWAH PADA HALAMAN HOMESCREEN

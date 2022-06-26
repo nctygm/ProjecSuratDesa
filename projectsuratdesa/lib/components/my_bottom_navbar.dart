@@ -37,3 +37,4 @@ class mybottomNavBar extends StatelessWidget {
     );
   }
 }
+//CODINGAN INI ADALAH UNTUK MENAPILKAN NAVIGASI YANG ADA DI BAWAH DARI HOMESCREEN

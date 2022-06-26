@@ -29,6 +29,7 @@ class Body extends StatelessWidget {
                           : 0,
                   childAspectRatio: 1.65,
                 ),
+                //Pijit pindah halaman
                 itemBuilder: (context, index) => SuratBundleCard(
                   suratBundles: suratBundles[index],
                   press: () {
@@ -47,3 +48,5 @@ class Body extends StatelessWidget {
     );
   }
 }
+//CODINGAN INI ADALAH PENGATURAN UKURAN UNTUK BODY DARI HALAMAN UTAMA ATAU HOMESCREE
+//YANG MENAMPUNG KARTU/CARD (TERSAMBUNG KE FILE SuratBundle.dart)

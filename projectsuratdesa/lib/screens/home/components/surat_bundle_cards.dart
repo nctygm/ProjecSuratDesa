@@ -54,7 +54,7 @@ class SuratBundleCard extends StatelessWidget {
                       Image.asset('assets/png/panah.png'),
                       SizedBox(width: defaultSize),
                       Text(
-                        suratBundles.uploadbuktilahir,
+                        suratBundles.tiga,
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],
@@ -64,7 +64,7 @@ class SuratBundleCard extends StatelessWidget {
                       Image.asset('assets/png/panah.png'),
                       SizedBox(width: defaultSize),
                       Text(
-                        suratBundles.uploadktp,
+                        suratBundles.dua,
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],
@@ -75,7 +75,7 @@ class SuratBundleCard extends StatelessWidget {
                       Image.asset('assets/png/panah.png'),
                       SizedBox(width: defaultSize),
                       Text(
-                        suratBundles.uploadKK,
+                        suratBundles.tiga,
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],
@@ -85,7 +85,7 @@ class SuratBundleCard extends StatelessWidget {
                       Image.asset('assets/png/panah.png'),
                       SizedBox(width: defaultSize),
                       Text(
-                        suratBundles.uploadbuktinikah,
+                        suratBundles.lima,
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],
@@ -110,3 +110,4 @@ class SuratBundleCard extends StatelessWidget {
     );
   }
 }
+// CODING UNTUK UKURAN DARI KARTU/CARD YANG ADA DI file SuratBundle.dart
