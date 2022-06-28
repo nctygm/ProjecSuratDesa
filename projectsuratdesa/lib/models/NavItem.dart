@@ -21,13 +21,21 @@ class NavItems extends ChangeNotifier {
   int selectedIndex = 0;
   List<NavItem> items = [
     NavItem(
-        id: 1, icon: "assets/icons/personicon.png", destination: HomeScreen()),
+        id: 1,
+        icon: "assets/icons/personicon.png",
+        destination: const HomeScreen()),
     NavItem(
-        id: 2, icon: "assets/icons/personicon.png", destination: HomeScreen()),
+        id: 2,
+        icon: "assets/icons/personicon.png",
+        destination: const HomeScreen()),
     NavItem(
-        id: 3, icon: "assets/icons/personicon.png", destination: HomeScreen()),
+        id: 3,
+        icon: "assets/icons/personicon.png",
+        destination: const HomeScreen()),
     NavItem(
-        id: 4, icon: "assets/icons/personicon.png", destination: HomeScreen()),
+        id: 4,
+        icon: "assets/icons/personicon.png",
+        destination: const HomeScreen()),
   ];
 }
 //INI ADALAH CODINGAN UNTUK MENGATUR GAMBAR PADA NAVIGASI DI BAWAH PADA HALAMAN HOMESCREEN

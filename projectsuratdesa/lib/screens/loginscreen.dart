@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => HomeScreen(),
+              builder: (BuildContext context) => const HomeScreen(),
             ));
       } else {
         errorSnackBar(context, responseMap.values.first);
@@ -95,7 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => RegisterScreen(),
+                        builder: (BuildContext context) =>
+                            const RegisterScreen(),
                       ));
                 },
                 child: const Text(

@@ -1,50 +1,45 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:projectsuratdesa/screens/home_screen.dart';
 import 'package:http/http.dart' as http;
 
-class InputSuratKelahiran extends StatelessWidget {
+class inputsuratkettidakmampu extends StatelessWidget {
   bool validator = false;
   final _formkey = GlobalKey<FormState>();
   final TextEditingController _hubunganController = TextEditingController();
-  final TextEditingController _nama_anakController = TextEditingController();
-  final TextEditingController _tgl_lahirController = TextEditingController();
-  final TextEditingController _tempat_lahirController = TextEditingController();
-  final TextEditingController _jns_kelaminController = TextEditingController();
-  final TextEditingController _nama_ayahController = TextEditingController();
-  final TextEditingController _nama_ibuController = TextEditingController();
+  final TextEditingController _jnssurat_pengantarController =
+      TextEditingController();
+  final TextEditingController _nama_terkaitController = TextEditingController();
+  final TextEditingController _pekerjaanController = TextEditingController();
   final TextEditingController _alamatController = TextEditingController();
-  final TextEditingController _rtController = TextEditingController();
-  final TextEditingController _rwController = TextEditingController();
+  final TextEditingController _tujuanController = TextEditingController();
   final TextEditingController _tgl_buatController = TextEditingController();
-  final TextEditingController _buktikel_fileController =
+  final TextEditingController _pengantar_fileController =
       TextEditingController();
-  final TextEditingController _kk_fileController = TextEditingController();
+  final TextEditingController _pernyataan_fileController =
+      TextEditingController();
   final TextEditingController _ktp_fileController = TextEditingController();
-  final TextEditingController _bukunikah_fileController =
-      TextEditingController();
+  final TextEditingController _kk_fileController = TextEditingController();
 
-  InputSuratKelahiran({Key? key}) : super(key: key);
+  inputsuratkettidakmampu({Key? key}) : super(key: key);
 
   Future simpanData() async {
     final response = await http
-        .post(Uri.parse("http://10.0.2.2:8000/api/HalamanSurat"), body: {
+        .post(Uri.parse("http://10.0.2.2:8000/api/srttdkmampu"), body: {
       "hubungan": _hubunganController.text,
-      "nama_anak": _nama_anakController.text,
-      "tgl_lahir": _tgl_lahirController.text,
-      "tempat_lahir": _tempat_lahirController.text,
-      "jns_kelamin": _jns_kelaminController.text,
-      "nama_ayah": _nama_ayahController.text,
-      "nama_ibu": _nama_ibuController.text,
+      "jnssurat_pengantar": _jnssurat_pengantarController.text,
+      "nama_terkait": _nama_terkaitController.text,
+      "pekerjaan": _pekerjaanController.text,
       "alamat": _alamatController.text,
-      "rt": _rtController.text,
-      "rw": _rwController.text,
+      "tujuan": _tujuanController.text,
       "tgl_buat": _tgl_buatController.text,
-      "buktikel_file": _buktikel_fileController.text,
-      "kk_file": _kk_fileController.text,
+      "pengantar_file": _pengantar_fileController.text,
+      "pernyataan_file": _pernyataan_fileController.text,
       "ktp_file": _ktp_fileController.text,
-      "bukunikah_file": _bukunikah_fileController.text,
+      "kk_file": _kk_fileController.text,
     });
     print(response.body);
 
@@ -72,60 +67,30 @@ class InputSuratKelahiran extends StatelessWidget {
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               TextField(
-                controller: _nama_anakController,
+                controller: _jnssurat_pengantarController,
                 decoration: InputDecoration(
-                    hintText: 'Nama Anak',
-                    labelText: 'Masukan Nama Anak',
+                    hintText: 'Jenis Surat',
+                    labelText: 'Jenis Surat Pengantar',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               TextField(
-                controller: _tgl_lahirController,
+                controller: _nama_terkaitController,
                 decoration: InputDecoration(
-                    hintText: 'Tanggal Lahir',
-                    labelText: 'Masukan Tanggal Lahir Anak',
+                    hintText: 'Nama Terkait',
+                    labelText: 'Masukan Nama Terkait',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               TextField(
-                controller: _tempat_lahirController,
+                controller: _pekerjaanController,
                 decoration: InputDecoration(
-                    hintText: 'Tempat Lahir',
-                    labelText: 'Masukan Tempat Lahir',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )),
-              ),
-              const Padding(padding: EdgeInsets.only(top: 15)),
-              TextField(
-                controller: _jns_kelaminController,
-                decoration: InputDecoration(
-                    hintText: 'Jenis Kelamin',
-                    labelText: 'Jenis Kelamin',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )),
-              ),
-              const Padding(padding: EdgeInsets.only(top: 15)),
-              TextField(
-                controller: _nama_ayahController,
-                decoration: InputDecoration(
-                    hintText: 'Nama Ayah',
-                    labelText: 'Nama Ayah',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )),
-              ),
-              const Padding(padding: EdgeInsets.only(top: 15)),
-              TextField(
-                controller: _nama_ibuController,
-                decoration: InputDecoration(
-                    hintText: 'Nama Ibu',
-                    labelText: 'Nama Ibu',
+                    hintText: 'Pekerjaan',
+                    labelText: 'Masukan Pekerjaan',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
@@ -143,20 +108,10 @@ class InputSuratKelahiran extends StatelessWidget {
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               TextField(
-                controller: _rtController,
+                controller: _tujuanController,
                 decoration: InputDecoration(
-                    hintText: 'RT',
-                    labelText: 'Masukan RT',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )),
-              ),
-              const Padding(padding: EdgeInsets.only(top: 15)),
-              TextField(
-                controller: _rwController,
-                decoration: InputDecoration(
-                    hintText: 'RW',
-                    labelText: 'Masukan RW',
+                    hintText: 'Tujuan',
+                    labelText: 'Tujuan Pembuatan Surat',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
@@ -166,28 +121,27 @@ class InputSuratKelahiran extends StatelessWidget {
                 controller: _tgl_buatController,
                 decoration: InputDecoration(
                     hintText: 'Tanggal Buat',
-                    labelText: 'Masukan Tanggal Buat',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )),
-              ),
-
-              const Padding(padding: EdgeInsets.only(top: 15)),
-              TextField(
-                controller: _buktikel_fileController,
-                decoration: InputDecoration(
-                    hintText: 'Bukti Lahir',
-                    labelText: 'Masukan Bukti Kelahiran Bidan / RS',
+                    labelText: 'Masukan Tangga Buat Surat',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               TextField(
-                controller: _kk_fileController,
+                controller: _pengantar_fileController,
                 decoration: InputDecoration(
-                    hintText: 'Kartu Keluarga',
-                    labelText: 'Masukan Kartu Keluarga',
+                    hintText: 'Surat Pengantar',
+                    labelText: 'Upload Surat Pengantar',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    )),
+              ),
+              const Padding(padding: EdgeInsets.only(top: 15)),
+              TextField(
+                controller: _pernyataan_fileController,
+                decoration: InputDecoration(
+                    hintText: 'Surat Pernyataan',
+                    labelText: 'Upload Surat Pernyataan',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
@@ -197,22 +151,22 @@ class InputSuratKelahiran extends StatelessWidget {
                 controller: _ktp_fileController,
                 decoration: InputDecoration(
                     hintText: 'KTP',
-                    labelText: 'Masukan KTP',
+                    labelText: 'Upload KTP',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               TextField(
-                controller: _bukunikah_fileController,
+                controller: _kk_fileController,
                 decoration: InputDecoration(
-                    hintText: 'Bukti Nikah',
-                    labelText: 'Masukan Bukti Nikah',
+                    hintText: 'Kartu Keluarga',
+                    labelText: 'Upload Kartu Keluarga',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     )),
               ),
-              //DISINI
+              //================
               const Padding(padding: EdgeInsets.only(top: 15)),
               ElevatedButton(
                   onPressed: () {
@@ -238,9 +192,15 @@ AppBar buildAppBar() {
   return AppBar(
     backgroundColor: const Color(0xFF84AB5C),
     leading: IconButton(
-        icon: Image.asset('assets/png/backbutton.png'), onPressed: () {}),
+        icon: Image.asset('assets/png/backbutton.png'),
+        onPressed: () {
+          (BuildContext context) {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()));
+          };
+        }),
     centerTitle: true,
-    title: const Text('Form Surat Kelahiran'),
+    title: const Text('Form Surat Ket Tidak Mampu'),
   );
 }
-//CODINGAN INI ADALAH HALAMAN INPUT SURAT
+//CODINGAN INI ADALAH HALAMAN INPUT SURAT tidak mampu

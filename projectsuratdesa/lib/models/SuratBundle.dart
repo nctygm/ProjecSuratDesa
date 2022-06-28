@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projectsuratdesa/screens/halamansurat/inputsuratkematian.dart';
 import 'package:projectsuratdesa/screens/halamansurat/inputsuratkelahiran.dart';
+import 'package:projectsuratdesa/screens/halamansurat/inputsuratketbiodatapenduduk.dart';
+import 'package:projectsuratdesa/screens/halamansurat/inputsuratketdomisiliusaha.dart';
+import 'package:projectsuratdesa/screens/halamansurat/inputsuratkettidakmampu.dart';
+import 'package:projectsuratdesa/screens/halamansurat/inputsuratketumumdesa.dart';
 import 'package:projectsuratdesa/screens/home_screen.dart';
 
 class SuratBundles {
@@ -58,7 +63,7 @@ List<SuratBundles> suratBundles = [
       imageSrc: "assets/png/kematian.png",
       syarat: "Syarat yang diperlukan :",
       color: Colors.red,
-      destination: const HomeScreen()),
+      destination: InputSuratKematian()),
   SuratBundles(
       id: 3,
       satu: "Surat Keterangan Lahir",
@@ -71,7 +76,7 @@ List<SuratBundles> suratBundles = [
       imageSrc: "assets/png/tidak_mampu.png",
       syarat: "Syarat yang diperlukan :",
       color: Colors.green,
-      destination: const HomeScreen()),
+      destination: inputsuratkettidakmampu()),
   SuratBundles(
       id: 4,
       satu: "Surat Keterangan Lahir",
@@ -84,7 +89,7 @@ List<SuratBundles> suratBundles = [
       imageSrc: "assets/png/biodata_penduduk.png",
       syarat: "Syarat yang diperlukan :",
       color: Colors.orange,
-      destination: HomeScreen()),
+      destination: inputsuratketbiodatapenduduk()),
   SuratBundles(
       id: 5,
       satu: "Surat Keterangan Lahir",
@@ -97,7 +102,7 @@ List<SuratBundles> suratBundles = [
       imageSrc: "assets/png/umum.png",
       syarat: "Syarat yang diperlukan :",
       color: Colors.purple,
-      destination: HomeScreen()),
+      destination: inputsuratketumumdesa()),
   SuratBundles(
       id: 6,
       satu: "Surat Keterangan Lahir",
@@ -109,8 +114,8 @@ List<SuratBundles> suratBundles = [
       description: "Adalah Surat untuk Pengurusan domisili Usaha",
       imageSrc: "assets/png/usaha.png",
       syarat: "Syarat yang diperlukan :",
-      color: Color(0xFF2D365C),
-      destination: HomeScreen()),
+      color: const Color(0xFF2D365C),
+      destination: inputsuratketdomisiliusaha()),
 ];
 
 //CODINGAN INI UNTUK MENGATUK TULISAN2 DI SETIAP KARTU/CARD YANG ADA DI HALAMAN HOMESCREEN

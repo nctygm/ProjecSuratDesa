@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projectsuratdesa/models/NavItem.dart';
-import 'package:projectsuratdesa/screens/home_screen.dart';
 import 'package:projectsuratdesa/screens/loginscreen.dart';
-import 'package:projectsuratdesa/screens/registerscreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:projectsuratdesa/components/roundedbutton.dart';
 import 'package:projectsuratdesa/loginconnection/auth_services.dart';
 import 'package:projectsuratdesa/loginconnection/globals.dart';
-import 'package:projectsuratdesa/screens/home_screen.dart';
 import 'package:projectsuratdesa/screens/loginscreen.dart';
 import 'package:http/http.dart' as http;
 
@@ -32,7 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => LoginScreen(),
+              builder: (BuildContext context) => const LoginScreen(),
             ));
       } else {
         errorSnackBar(context, responseMap.values.first[0]);
@@ -46,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF84AB5C),
+        backgroundColor: const Color(0xFF84AB5C),
         centerTitle: true,
         elevation: 0,
         title: const Text(
@@ -111,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => LoginScreen(),
+                      builder: (BuildContext context) => const LoginScreen(),
                     ));
               },
               child: const Text(
