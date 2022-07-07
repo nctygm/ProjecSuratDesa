@@ -36,6 +36,22 @@ class AuthServices {
     print(response.body);
     return response;
   }
+
+  static Future<http.Response> logout(String email, String password) async {
+    Map data = {
+      "email": email,
+      "password": password,
+    };
+    var body = json.encode(data);
+    var url = Uri.parse(baseURL + 'auth/logout');
+    http.Response response = await http.post(
+      url,
+      headers: headers,
+      body: body,
+    );
+    print(response.body);
+    return response;
+  }
 }
 //CODINGAN AUTENTIKASI AKUN UNTUK REGISTRASI DAN LOGIN
 //CODINGAN INI TERHUBUNG DENGAN API YANG TELAH DI BUAT PADA FILE API (projectsidesa-api)

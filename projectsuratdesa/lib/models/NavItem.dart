@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectsuratdesa/screens/home_screen.dart';
+import 'package:projectsuratdesa/screens/loginscreen.dart';
+import 'package:projectsuratdesa/screens/reportscreen.dart';
 
 class NavItem {
   final int id;
@@ -18,16 +20,23 @@ class NavItem {
 }
 
 class NavItems extends ChangeNotifier {
-  int selectedIndex = 0;
+  int selectedIndex = 1;
+
+  void chaneNavIndex({required int index}) {
+    selectedIndex = index;
+    //sksjkdjskdjk
+    notifyListeners();
+  }
+
   List<NavItem> items = [
     NavItem(
         id: 1,
-        icon: "assets/icons/personicon.png",
-        destination: const HomeScreen()),
+        icon: "assets/icons/logout.png",
+        destination: const LoginScreen()),
     NavItem(
         id: 2,
-        icon: "assets/icons/personicon.png",
-        destination: const HomeScreen()),
+        icon: "assets/icons/mail.png",
+        destination: const reportScreen()),
     NavItem(
         id: 3,
         icon: "assets/icons/personicon.png",

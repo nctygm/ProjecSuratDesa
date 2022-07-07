@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectsuratdesa/contstants.dart';
 import 'package:projectsuratdesa/models/NavItem.dart';
 import 'package:projectsuratdesa/size_config.dart';
 import 'package:provider/provider.dart';
@@ -23,17 +24,38 @@ class mybottomNavBar extends StatelessWidget {
         ]),
         child: SafeArea(
           child: Row(
-            children: <Widget>[buildconNavBarItem(NavItems)],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: List.generate(
+              NavItems.items.length,
+              (index) => buildconNavBarItem(
+                icon: NavItems.items[index].icon,
+                press: () {
+                  NavItems.chaneNavIndex(index: index);
+                  if (NavItems.items[index].destinationChecker()) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              NavItems.items[index].destination,
+                        ));
+                  }
+                },
+              ),
+            ),
           ),
         ),
       ),
     );
   }
 
-  IconButton buildconNavBarItem(NavItems NavItems) {
+  IconButton buildconNavBarItem(
+      {required String icon, press, bool isActive = false}) {
     return IconButton(
-      icon: Image.asset(NavItems.items[0].icon),
-      onPressed: () {},
+      icon: Image.asset(
+        icon,
+        height: 22, //WARNA BUTTON BAWAH
+      ),
+      onPressed: press,
     );
   }
 }
